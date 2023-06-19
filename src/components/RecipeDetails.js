@@ -15,7 +15,6 @@ export default function RecipeDetails() {
   const { pathname } = history.location;
 
   const id = pathname.replace(/[^0-9]/g, '');
-  // requito 30
   useEffect(() => {
     const path = pathname.includes('meals') ? 'meals' : 'drinks';
     const storageDoneRecipes = JSON.parse(localStorage.getItem('doneRecipes'));

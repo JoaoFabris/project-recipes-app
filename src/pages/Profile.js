@@ -47,7 +47,7 @@ export default function Profile() {
 
       <button
         type="button"
-        data-testid="profile-logout-btn"
+        data-testid="profile-btnLogout-btn"
         onClick={ handleLogout }
       >
         Logout

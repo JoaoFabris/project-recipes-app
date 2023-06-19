@@ -51,7 +51,7 @@ describe('testa a página do Profile', () => {
     const btnProfile2 = screen.getByTestId('profile-top-btn');
     userEvent.click(btnProfile2);
 
-    const btnLogout = screen.getByTestId('profile-logout-btn');
+    const btnLogout = screen.getByTestId('profile-btnLogout-btn');
     userEvent.click(btnLogout);
 
     const login = screen.getByText(/login/i);

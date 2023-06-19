@@ -7,16 +7,25 @@ import shareIcon from '../images/shareIcon.svg';
 export default function RecipeInProgress() {
   const [favorite, setFavorite] = useState(false);
   const [details, setDetails] = useState({});
-
   const history = useHistory();
   const { pathname } = history.location;
   const id = pathname.replace(/[^0-9]/g, '');
+  console.log(pathname);
 
   const checkIfIsFavorite = () => (favorite ? blackHeartIcon : whiteHeartIcon);
 
   const handleToggleFavorite = () => {
     setFavorite((previous) => !previous);
   };
+
+  useEffect(() => {
+    if (!localStorage.inProgressRecipes) {
+      localStorage.setItem(
+        'inProgressRecipes',
+        JSON.stringify({ meals: { id: [] }, drinks: { id: [] } }),
+      );
+    }
+  }, []);
 
   useEffect(() => {
     const fetchIdRecipe = async () => {
@@ -84,7 +93,6 @@ export default function RecipeInProgress() {
                 <button
                   className="btn-favorite"
                   type="button"
-                  // onClick={ copyToClipboard }
                 >
                   <img
                     data-testid="share-btn"

@@ -3,7 +3,6 @@ import { useHistory, Link } from 'react-router-dom';
 import Context from '../context/Context';
 
 function Recipes() {
-  // const [recipesList, setRecipesList] = useState([]);
   const [categoriesList, setCategoriesList] = useState([]);
   const [selCategory, setSelCategory] = useState('');
   const [filteredCategory, setFilteredCategory] = useState('');

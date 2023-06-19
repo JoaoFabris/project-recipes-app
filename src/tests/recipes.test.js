@@ -20,7 +20,7 @@ describe('Testando componentes de Recipes', () => {
     userEvent.type(passInput, '12345678');
     userEvent.click(btnSubmit);
     const btnBeef = await screen.findByRole('button', { name: /beef/i });
-    const btnCategory = await screen.getByTestId('All-category-filter');
+    const btnCategory = screen.getByTestId('All-category-filter');
     expect(btnBeef).toBeInTheDocument();
     userEvent.click(btnCategory);
     expect(global.fetch).toHaveBeenCalledTimes(4);

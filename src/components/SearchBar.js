@@ -97,7 +97,6 @@ export default function SearchBar() {
       return ApiSearchBarDrinks();
     }
   };
-  // redirect
   useEffect(() => {
     const redirect = () => {
       if (responseSerch.meals?.length === 1) {
